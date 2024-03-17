@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<pre>
+    Напишіть функцію, яка порівнює два рядки та визначає, чи є вони анаграмою (слова складаються з одних і тих самих букв).
+    Рядки отримуємо від користувача за допомогою 2-х методів prompt. Приклад:
+       • перше слово – asdfghj;
+       • друге слово – jahsgdf;
+    Результат: слова «asdfghj» та «jahsgdf» є анаграмою.
+</pre>
+
+<body>
+    <script>
+        //В основі алгоритму - порівняння двох відсортованих рядків
+
+        let str1 = prompt("Enter the first word to check");
+        let str2 = prompt("Enter the second word to check");
+
+
+        str1 = str1.toLowerCase();
+        str2 = str2.toLowerCase();
+
+        function isStrAnagram(strOne, strTwo) {
+            if (strOne.lenght === strTwo.lenght) {
+                strOne = strOne.split("").sort().join("");
+                strTwo = strTwo.split("").sort().join("");
+            }
+            return strOne === strTwo ? alert(`Words ${strOne} and ${strTwo} is anagramma`) : alert(`Words ${strOne} and ${strTwo} is not anagramma`)
+        }
+
+        console.log(isStrAnagram(str1, str2));
+
+    </script>
+</body>
+
+</html>
